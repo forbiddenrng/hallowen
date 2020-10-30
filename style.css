@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #eee;
+}
+.header {
+  position: relative;
+  overflow: hidden;
+}
+.header .background {
+  width: 100%;
+}
+.header .cloud {
+  animation: cloud 10s infinite linear;
+}
+.header img.cloud:nth-child(3) {
+  animation-direction: alternate-reverse;
+}
+.header img.cloud {
+  position: absolute;
+  /* height: 50px; */
+  width: 60px;
+  top: 15%;
+  right: 0;
+}
+.header img.cloud:nth-child(2){
+  top: 30%;
+  right: 20%;
+}
+.header img.cloud:nth-child(3){
+  top: 5%;
+  right: 30%;
+}
+.navigation {
+  margin-top: 15px;
+  display: flex;
+}
+.header img.mons {
+  position: absolute;
+  width: 40px;
+  bottom: 10%;
+  right: 3%;
+  transform-origin: 50% 100%;
+  animation: mop 10s infinite linear reverse;
+}
+@keyframes cloud {
+  0% {
+    transform: translate(0%);
+  }
+  25% {
+    transform: translateX(15%);
+  }
+  75% {
+    transform: translateX(-15%);
+  }
+  100%{
+    transform: translate(0%);
+  }
+}
+@keyframes mop {
+  0%{
+    transform: rotate(0deg)
+  }
+  25% {
+    transform: rotate(10deg)
+  }
+  75%{
+    transform: rotate(-10deg)
+  }
+  100%{
+    transform: rotate(0deg)
+  }
+}
+@media(orientation: landscape) {
+  .header img.cloud {
+    width: 90px;
+  }
+  .header img.mons {
+    width: 70px; 
+  }
+}
+@media(min-width: 768px){
+  .header img.cloud {
+    width: 110px;
+  }
+  .header img.mons {
+    width: 80px; 
+  }
+}
+@media(min-width: 1024px){
+  .header img.cloud {
+    width: 150px;
+  }
+  .header img.mons {
+    width: 100px; 
+  }
+}
+@media(min-width: 1300px){
+  .header img.cloud {
+    width: 180px;
+  }
+  .header img.mons {
+    width: 130px; 
+  }
+}
+
+
+
+
+/* NAWIGATION */
+.logo {
+  flex-basis: 15%;
+}
+.logo img {
+  width: 100%;
+}
+.logo img:hover {
+  cursor: pointer;
+}
+
+.navigation ul {
+  color: white;
+  display: flex;
+  flex: 1;
+  list-style: none;
+
+}
+.navigation ul li {
+  flex-basis: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navigation ul li a {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #999;
+  transition: .2s;
+}
+.navigation ul li a:hover {
+  color: black;
+  cursor: pointer;
+}
+@media(min-width: 640px){
+  .navigation ul li a{
+    font-size: 16px;
+  }
+}
+@media(min-width: 1024px){
+  .navigation ul li a{
+    font-size: 20px;
+  }
+}
+@media(min-width: 1300px){
+  .navigation ul li a{
+    font-size: 24px;
+  }
+}
+/* INFO */
+
+.info {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+.info header ul li {
+  display: inline-block;
+  margin-right: -5px;
+  list-style: none;
+  font-size: 20px;
+  color: rgb(236, 110, 26);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.info header ul li img {
+  width: 20px;
+  animation: pumpkin 10s linear infinite;
+}
+.info h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.info p {
+  font-size: 13px;
+  margin-top: 5px;
+}
+.info button {
+  margin-top: 5px;
+  text-transform: uppercase;
+  padding: 5px 7px;
+  background-color: rgb(236, 110, 26);
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@keyframes pumpkin {
+  0%{
+    transform: translateY(10%) rotate(0deg);
+  }
+  25%{
+    transform: translateY(10%) rotate(20deg);
+  }
+  75%{
+    transform: translateY(10%) rotate(-20deg);
+  }
+  100%{
+      transform: translateY(10%) rotate(0deg);
+  }
+}
+@media(min-width: 640px) {
+  .info header ul li {
+    font-size: 40px;
+  }
+  .info h2 {
+    font-size: 20px;   
+  }
+  .info p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .info header ul li img {
+    transform: translateY(10px);
+    width: 50px;
+  }
+  .info button {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+@media(min-width: 1024px) {
+  .info header ul li {
+    font-size: 50px;
+  }
+  .info h2 {
+    font-size: 25px;   
+  }
+  .info p {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  .info header ul li img {
+    transform: translateY(10px);
+    width: 60px;
+  }
+  .info button {
+    padding: 10px 15px;
+  }
+}
+@media(min-width: 1300px) {
+  .info header ul li {
+    font-size: 70px;
+  }
+  .info h2 {
+    font-size: 35px;   
+  }
+  .info p {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+  .info header ul li img {
+    transform: translateY(20px);
+    width: 90px;
+  }
+  .info button {
+    font-size: 18px;
+    padding: 15px 20px;
+    margin-top: 20px;
+  }
+}
